@@ -2,7 +2,9 @@ name: Pixel OS SUSFS
 
 
 on:
-
+  schedule:
+    - cron: 0 20 * * *
+    
     workflow_dispatch:
       inputs:
         RELEASE_CONFIG:
@@ -40,9 +42,6 @@ on:
           required: false
           default: "main"
           type: string
-          
-schedule:
-  - cron: '0 22 * * *' # 每天UTC 12点
 
 jobs:
 
